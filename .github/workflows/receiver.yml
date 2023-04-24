@@ -1,0 +1,14 @@
+news: Receiver
+
+n: 
+  repository_dispatch:
+    types: [tindie_notice_event]
+
+obs:
+  receiver:
+    runs-on: ubuntu-latest
+    steps:
+      - name: tindie_notice_event received
+        run: |
+          echo "Tindie Notice Received '${{github.event.client_payload.tindie}}'"
+
