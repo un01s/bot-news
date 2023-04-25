@@ -2,13 +2,13 @@ news: Receiver
 
 n: 
   repository_dispatch:
-    types: [tindie_notice_event]
+    types: [tindie_dispatch]
 
 obs:
   receiver:
     runs-on: ubuntu-latest
     steps:
-      - name: tindie_notice_event received
+      - name: tindie_dispatch received
         run: |
-          echo "Tindie Notice Received '${{github.event.client_payload.tindie}}'"
+          echo "Tindie Notice Received '${{github.event.client_payload.request}}'"
 
