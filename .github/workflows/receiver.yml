@@ -1,14 +1,14 @@
-news: Receiver
+name: Receiver
 
-n: 
+on: 
   repository_dispatch:
     types: [tindie_dispatch]
 
-obs:
+jobs:
   receiver:
     runs-on: ubuntu-latest
     steps:
       - name: tindie_dispatch received
         run: |
-          echo "Tindie Notice Received '${{github.event.client_payload.request}}'"
+          echo "Tindie Dispatch Received '${{github.event.client_payload.request}}'"
 
